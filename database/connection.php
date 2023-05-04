@@ -1,7 +1,7 @@
 <?php
-$hostname = "localhost:3307";
-$username = "admin1";
-$password = "1234";
+$hostname = "localhost";
+$username = "root";
+$password = "";
 $database_name = "webstockdb";
 
 $conn = mysqli_connect($hostname, $username, $password, $database_name);
