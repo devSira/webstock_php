@@ -1,0 +1,2 @@
+- create funtion get supply info
+- show supply each customer to selectshipment.php

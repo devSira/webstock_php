@@ -1,0 +1,17 @@
+table {
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+th,td {
+    border: 1px solid;
+    padding: 15px;            
+}
+input[type=submit] {
+    margin-top: 15px;
+}
+#username {
+    text-align: right;
+    margin-right: 15px;
+}

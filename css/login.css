@@ -1,0 +1,38 @@
+h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+form {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+label {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #00af00;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#supplier {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #0092af;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
