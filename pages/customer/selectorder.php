@@ -38,7 +38,7 @@
                         <td><input type='text' name='amount[]' size='1'></td>
                         <input type='hidden' name='idproduct[]' value='{$products['IDProduct'][$i]}'>
                         <input type='hidden' name='productName[]' value='{$products['ProductName'][$i]}'>
-                        <input type='hidden' name='pricePerUunit[]' value='{$products['PricePerUnit'][$i]}'>
+                        <input type='hidden' name='pricePerUnit[]' value='{$products['PricePerUnit'][$i]}'>
                         <input type='hidden' name='stockQty[]' value='{$products['StockQty'][$i]}'>
                     </tr>
                     ";

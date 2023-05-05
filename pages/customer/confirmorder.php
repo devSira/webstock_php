@@ -11,12 +11,12 @@
     // Get data from pages/customer/selectorder.php
     $_SESSION['idproduct'] = $_POST['idproduct'];
     $_SESSION['productName'] = $_POST['productName'];
-    $_SESSION['pricePerUunit'] = $_POST['pricePerUunit'];
+    $_SESSION['pricePerUnit'] = $_POST['pricePerUnit'];
     $_SESSION['amount'] = $_POST['amount'];
     $_SESSION['stockQty'] = $_POST['stockQty'];
     // $_SESSION['idproduct'] = $_POST['idproduct'];
-    // $productName = $_POST['productName'];
-    // $pricePerUunit = $_POST['pricePerUunit'];
+    // $_SESSION['productName'] = $_POST['productName'];
+    // $_SESSION['pricePerUnit'] = $_POST['pricePerUunit'];
     // $_SESSION['amount'] = $_POST['amount'];
     // $_SESSION['stockQty'] = $_POST['stockQty'];
     $totalPrice = 0;
@@ -40,7 +40,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php for($i=0; $i<count($$_SESSION['idproduct']); $i++) {
+                <?php for($i=0; $i<count($_SESSION['idproduct']); $i++) {
                     if($_SESSION['amount'][$i] == 0 || $_SESSION['amount'][$i] == null) continue;
                     else {
                         if($_SESSION['amount'][$i] > $_SESSION['stockQty'][$i]) {
@@ -52,20 +52,20 @@
                             $availability = "<font color=blue>ready";
                             $_SESSION['stockQty'][$i] = $_SESSION['stockQty'][$i]-$_SESSION['amount'][$i];
                         }
-                        $priceSum = $_SESSION['amount'][$i]*$pricePerUunit[$i];
+                        $priceSum = $_SESSION['amount'][$i]*$_SESSION['pricePerUnit'][$i];
                         $totalPrice += $priceSum;
                         echo "
                             <tr>
                                 <td>{$_SESSION['idproduct'][$i]}</td>
-                                <td>{$productName[$i]}</td>
-                                <td>{$pricePerUunit[$i]}</td>
+                                <td>{$_SESSION['productName'][$i]}</td>
+                                <td>{$_SESSION['pricePerUnit'][$i]}</td>
                                 <td>{$_SESSION['amount'][$i]}</td>
                                 <td>{$priceSum}</td>
                                 <td>{$availability}</td>
                                 <input type='hidden' name='idproduct[]' value='{$_SESSION['idproduct'][$i]}'>
                                 <input type='hidden' name='stockQty[]' value='{$_SESSION['stockQty'][$i]}'>
-                                <input type='hidden' name='productName[]' value='{$productName[$i]}'>
-                                <input type='hidden' name='pricePerUunit[]' value='{$pricePerUunit[$i]}'>
+                                <input type='hidden' name='productName[]' value='{$_SESSION['productName'][$i]}'>
+                                <input type='hidden' name='pricePerUunit[]' value='{$_SESSION['pricePerUnit'][$i]}'>
                                 <input type='hidden' name='priceSum[]' value='{$priceSum}'>
                                 <input type='hidden' name='amounts[]' value='{$_SESSION['amount'][$i]}'>
                                 <input type='hidden' name='totalPrice' value='{$totalPrice}'>
